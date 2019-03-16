@@ -1,0 +1,102 @@
+html, body {
+  overflow: hidden;
+}
+
+.header {
+  box-sizing: border-box;
+  height: 50px;
+  width: 100%;
+}
+
+.btn-add {
+  display: inline-block;
+  position: absolute;
+  right: 10px;
+  margin: auto;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  border: solid 2px #67c5ff;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.btn-add:hover {
+  background: #67c5ff;
+  color: white;
+}
+
+.btn-menu {
+  display: inline-block;
+  position: absolute;
+  left: 10px;
+  margin: auto;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  border: solid 2px #67c5ff;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.btn-menu:hover {
+  background: #67c5ff;
+  color: white;
+}
+
+.information {
+  box-sizing: border-box;
+  text-align: center;
+  height: 25px;
+  width: 100%;
+}
+
+.chart{
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+.footer {
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+}
+
+.btn-week-back {
+  display: inline-block;
+  position: absolute;
+  left: 10px;
+  margin: auto;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  border: solid 2px #67c5ff;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.btn-week-back:hover {
+  background: #67c5ff;
+  color: white;
+}
+
+.btn-week-ahead {
+  display: inline-block;
+  position: absolute;
+  right: 15px;
+  margin: auto;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  border: solid 2px #67c5ff;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.btn-week-ahead:hover {
+  background: #67c5ff;
+  color: white;
+}

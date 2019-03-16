@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="jp">
+    <head>
+        <meta charset="UTF-8">
+        <title>体温記録表</title>
+        <link rel="stylesheet" type="text/css" href="default.css">
+        </head>
+    <div class="header">
+        <a href="#" class="btn-menu" >メニュー</a>
+        <a href="#" class="btn-add" >体温を追加する</a>
+    </div>
+    <div class="information">
+        <label for="kanja_information">氏名：　年令：歳　性別：</label>
+    </div>
+    <div class="chart" align="center" >
+        <canvas id="TemperatureChart"></canvas>
+    <div class="footer">
+        <a href="#" class="btn-week-back" >前の1週間</a>
+        <a href="#" class="btn-week-ahead" >次の1週間</a>
+    </div>
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+
+<script type="text/javascript">
+
+    const ChartLineRed = '#ff3232'
+
+    var rowData = [36.5, 37.0, 37.3, 38.2, 37.8];
+    var rowData2 = ['1','2','3','4','5'];
+
+    var chartChart = document.getElementById("TemperatureChart");
+
+    new Chart(chartChart, {
+        type: 'line',
+        title: {
+            display: false,
+            text: '氏名: 友愛太郎　年齢：３歳　男'
+        },
+        data: {
+            labels: rowData2,
+            datasets: [
+                {
+                    data: rowData,
+                    pointRadius: 5,
+                    borderColor: ChartLineRed,
+                    pointBackgroundColor: ChartLineRed,
+                    pointBorderColor: ChartLineRed,
+                    fill: false,
+                }
+            ]
+        },
+        options: {
+            //凡例設定
+            legend: {
+                display: false
+           },
+            elements: {
+                line: {
+                    tension: 0, // ベジェ曲線無効化
+                }
+            },
+            scales: {
+                xAxes: [{
+                    offset: true,
+                    // 線形直交軸
+                    ticks: {
+                        fontSize: 20,
+                        stepSize: 3,
+                        callback: function(value, index, values){
+                            return  value
+                        },
+                    }
+                }],
+                yAxes: [{
+                    gridline:{
+                        display: true,
+                        drawBorder: true,
+                        drawTicks: true,
+                        drawOnChartArea: true
+                    },
+                    // 線形直交軸
+                    ticks: {
+                        precision: 1,
+                        fontSize: 20,
+                        suggestedMax: 41.0,
+                        suggestedMin: 35.0,
+                        stepSize: 0.5,
+                        display: true,
+                        callback: function(value, index, values){
+                            return  value +  '°'
+                        },
+                    }
+                }]
+            }
+        }
+    });
+</script>
